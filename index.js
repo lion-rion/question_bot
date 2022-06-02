@@ -14,7 +14,9 @@ const client = new Client({ intents: [
   ]
 });
 
-const MessageChannel = '866524012552388611'; //メッセージチャンネルIDを記載
+const MessageChannel = '<ChannelId>'; //メッセージチャンネルIDを記載
+const BotId = '<BotId>'; //ここは適宜変更してください
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -22,7 +24,7 @@ client.on('ready', () => {
 
 client.on('messageCreate', message=> {
   // Check if this message is from DM or not
-  if (message.author.id != '969986704419221625'){ //botが送信したメッセージが判定
+  if (message.author.id != BotId){ //botが送信したメッセージが判定
     if (message.channel.type === 'DM') { //メッセージがDMかどうか判定
       CheckMessage(message)
     }
